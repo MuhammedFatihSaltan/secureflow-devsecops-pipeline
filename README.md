@@ -53,3 +53,29 @@ secureflow-devsecops-pipeline/
 ├── Dockerfile                  # Konteyner yapılandırması
 ├── requirements.txt            # Proje bağımlılıkları
 └── README.md                   # Proje Dokümantasyonu
+
+
+---
+
+## 🚀 Projenin Amacı ve Kapsamı
+Geleneksel yazılım geliştirme süreçlerinde güvenlik testleri genellikle geliştirme döngüsünün en sonunda (Production öncesi) yapılır. Bu durum zafiyetlerin maliyetini ve çözüm süresini artırır. **SecureFlow**, kod yazım aşamasından konteyner dağıtımına kadar her adımda otomatik güvenlik denetimleri gerçekleştirerek bu açığı kapatır.
+
+---
+
+## ⚙️ CI/CD Süreç Akışı ve İşleyiş Mekanizması
+
+Projemizde tetiklenen süreçler, kodun geliştirici bilgisayarından GitHub deposuna gönderilmesiyle (`git push`) başlar ve sırasıyla şu katmanlardan geçer:
+
+```text
+[ Developer (Git Push) ] 
+       │
+       ├──► 1. CI Pipeline (build-and-test)
+       │     ├── Black & Flake8 (Kod Format ve Standart Kontrolü)
+       │     ├── Pytest (Birim Testleri / Unit Tests)
+       │     └── SonarCloud (Statik Kod Kalitesi ve Code Smell Analizi)
+       │
+       └──► 2. Security Pipeline (security-scans)
+             ├── Gitleaks (Sır / Şifre Sızıntısı Taraması)
+             ├── Bandit (Statik Uygulama Güvenliği - SAST)
+             ├── Pip-Audit (Bağımlılık Güvenlik Taraması - SCA / CVE)
+             └── Docker & Trivy (Konteyner İmajı ve İşletim Sistemi Zafiyet Taraması)
