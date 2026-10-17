@@ -7,3 +7,7 @@
 | 2026-10-17 | Faz 4 | GitHub Actions İlk Çalışma | GitHub Actions | ❌ | pytest modül bulamadı | ci.yml düzeltildi |
 
 | 2026-10-17 | Faz 4 | GitHub Actions Fix | GitHub Actions | ✅ | Pipeline başarıyla çalıştı | - |
+
+| 2026-10-17 | Faz 6 | Güvenlik Pipeline Kurulumu | Gitleaks, Bandit, Trivy | ✅ | Tüm araçlar hatasız çalıştı (Henüz zafiyet yok) | - |
+
+| 2026-10-17 | Faz 7 | Hardcoded Secret Testi | Bandit | ✅ | B105 uyarısıyla şifre sızıntısı yakalandı | os.environ ile düzeltildi |
