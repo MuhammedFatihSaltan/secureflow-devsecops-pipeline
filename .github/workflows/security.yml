@@ -1,0 +1,48 @@
+name: Security Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  security-scans:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Repo kodunu al (Checkout)
+      uses: actions/checkout@v4
+
+    - name: Python 3.12 Kurulumu
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+
+    - name: Gitleaks (Sır/Şifre Sızıntısı Taraması)
+      uses: gitleaks/gitleaks-action@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Bandit (Python Statik Güvenlik Analizi - SAST)
+      run: |
+        pip install bandit
+        bandit -r app/ -f custom
+
+    - name: Pip-Audit (Bağımlılık Zafiyet Taraması - SCA)
+      run: |
+        pip install pip-audit
+        pip-audit -r requirements.txt
+
+    - name: Docker İmajını Derle (Trivy için)
+      run: docker build -t secureflow-api:scan .
+
+    - name: Trivy (Konteyner İmaj Taraması)
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: 'secureflow-api:scan'
+        format: 'table'
+        exit-code: '0'
+        ignore-unfixed: true
+        vuln-type: 'os,library'
+        severity: 'CRITICAL,HIGH'
