@@ -5,3 +5,5 @@
 | 2026-10-17 | Faz 3 | Docker imajı oluşturma | Docker | ✅ | İmaj başarıyla derlendi ve çalıştırıldı | - |
 
 | 2026-10-17 | Faz 4 | GitHub Actions İlk Çalışma | GitHub Actions | ❌ | pytest modül bulamadı | ci.yml düzeltildi |
+
+| 2026-10-17 | Faz 4 | GitHub Actions Fix | GitHub Actions | ✅ | Pipeline başarıyla çalıştı | - |
