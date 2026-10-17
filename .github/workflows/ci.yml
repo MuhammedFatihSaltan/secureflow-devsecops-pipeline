@@ -32,7 +32,7 @@ jobs:
 
     - name: Birim Testleri (pytest)
       run: |
-        pytest --cov=app tests/
+        python -m pytest --cov=app tests/
 
     - name: Docker İmajını Derle (Build Test)
       run: |
