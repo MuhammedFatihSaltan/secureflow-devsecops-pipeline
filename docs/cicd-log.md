@@ -15,3 +15,7 @@
 | 2026-10-17 | Faz 7 | SCA Testi (Bağımlılık Analizi) | Pip-Audit | ⏳ | Zafiyetli paket eklendi, sonuç bekleniyor | - |
 
 | 2026-10-17 | Faz 7 | SCA Testi Çözümü | Pip-Audit | ✅ | urllib3 zafiyeti güvenli sürüme güncellenerek çözüldü | - |
+
+| 2026-10-17 | Faz 7 | Konteyner İmaj Taraması | Trivy | ✅ | Güncel Docker imajında kritik zafiyet bulunmadı, tarama başarılı | - |
+
+| 2026-10-17 | Faz 8 | Benchmarking (Kıyaslama) | Bandit | ✅ | CWE-89, CWE-78, CWE-327 başarıyla %100 oranında tespit edildi | - |

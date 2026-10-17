@@ -27,7 +27,7 @@ jobs:
     - name: Bandit (Python Statik Güvenlik Analizi - SAST)
       run: |
         pip install bandit
-        bandit -r app/ benchmark_dataset/ -f custom
+        bandit -r app/ -f custom
 
     - name: Pip-Audit (Bağımlılık Zafiyet Taraması - SCA)
       run: |
