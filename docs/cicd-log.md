@@ -11,3 +11,5 @@
 | 2026-10-17 | Faz 6 | Güvenlik Pipeline Kurulumu | Gitleaks, Bandit, Trivy | ✅ | Tüm araçlar hatasız çalıştı (Henüz zafiyet yok) | - |
 
 | 2026-10-17 | Faz 7 | Hardcoded Secret Testi | Bandit | ✅ | B105 uyarısıyla şifre sızıntısı yakalandı | os.environ ile düzeltildi |
+
+| 2026-10-17 | Faz 7 | SCA Testi (Bağımlılık Analizi) | Pip-Audit | ⏳ | Zafiyetli paket eklendi, sonuç bekleniyor | - |
