@@ -13,3 +13,5 @@
 | 2026-10-17 | Faz 7 | Hardcoded Secret Testi | Bandit | ✅ | B105 uyarısıyla şifre sızıntısı yakalandı | os.environ ile düzeltildi |
 
 | 2026-10-17 | Faz 7 | SCA Testi (Bağımlılık Analizi) | Pip-Audit | ⏳ | Zafiyetli paket eklendi, sonuç bekleniyor | - |
+
+| 2026-10-17 | Faz 7 | SCA Testi Çözümü | Pip-Audit | ✅ | urllib3 zafiyeti güvenli sürüme güncellenerek çözüldü | - |
